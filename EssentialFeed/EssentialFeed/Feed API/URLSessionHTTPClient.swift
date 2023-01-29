@@ -17,7 +17,8 @@ public final class URLSessionHTTPClient: HTTPClient {
         }
     }
 
-    public func get(from url: URL, _ completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+    public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) ->
+    HTTPClientTask {
         let task = session.dataTask(with: url) { data, response, error in
             completion(Result {
                 if let error = error {
@@ -28,11 +29,8 @@ public final class URLSessionHTTPClient: HTTPClient {
                     throw UnexpectedValuesRepresentationError()
                 }
             })
-
         }
-        
         task.resume()
         return URLSessionTaskWrapper(wrapped: task)
-        
     }
 }
