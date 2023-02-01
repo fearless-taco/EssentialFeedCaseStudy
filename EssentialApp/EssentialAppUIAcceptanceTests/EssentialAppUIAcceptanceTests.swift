@@ -7,13 +7,13 @@
 
 import XCTest
 
-final class EssentailAppUIAcceptanceTests: XCTestCase {
+final class EssentialAppUIAcceptanceTests: XCTestCase {
 
     func test_onLaunch_displaysRemoteFeedWhenCustomerHasConnectivity() throws {
         let app = XCUIApplication()
         
         app.launch()
-
+        
         XCTAssertEqual(app.cells.count, 22)
     }
 }
