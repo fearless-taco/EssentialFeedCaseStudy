@@ -1,4 +1,5 @@
 import EssentialFeed
+import Foundation
 
 final class FeedStoreSpy: FeedStore {
     enum ReceivedMessage: Equatable {
@@ -15,7 +16,7 @@ final class FeedStoreSpy: FeedStore {
 
     // MARK: - Delete
 
-    func deleteCachedFeed(_ completion: @escaping InsertionCompletion) {
+    func deleteCachedFeed(completion: @escaping InsertionCompletion) {
         deletionCompletions.append(completion)
         receivedMessages.append(.deleteCachedFeed)
     }

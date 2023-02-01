@@ -1,16 +1,18 @@
-import EssentialFeediOS
+import Foundation
 import EssentialFeed
+import EssentialFeediOS
 
 extension FeedUIIntegrationTests {
-    final class LoaderSpy: FeedLoader, FeedImageDataLoader {
+    
+    class LoaderSpy: FeedLoader, FeedImageDataLoader {
         
         // MARK: - FeedLoader
         
-        var loadFeedCallCount: Int {
-            feedRequests.count
-        }
-        
         private var feedRequests = [(FeedLoader.Result) -> Void]()
+        
+        var loadFeedCallCount: Int {
+            return feedRequests.count
+        }
         
         func load(completion: @escaping (FeedLoader.Result) -> Void) {
             feedRequests.append(completion)
@@ -21,28 +23,28 @@ extension FeedUIIntegrationTests {
         }
         
         func completeFeedLoadingWithError(at index: Int = 0) {
-            let error = NSError(domain: "test", code: 0)
+            let error = NSError(domain: "an error", code: 0)
             feedRequests[index](.failure(error))
         }
         
         // MARK: - FeedImageDataLoader
         
-        private(set) var cancelledImageURLs = [URL]()
-        private var imageRequests = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
-        
         private struct TaskSpy: FeedImageDataLoaderTask {
-            let cancelCallBack: () -> Void
-            
+            let cancelCallback: () -> Void
             func cancel() {
-                cancelCallBack()
+                cancelCallback()
             }
         }
         
+        private var imageRequests = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
+        
         var loadedImageURLs: [URL] {
-            imageRequests.map { $0.url }
+            return imageRequests.map { $0.url }
         }
         
-        func loadImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) -> FeedImageDataLoaderTask {
+        private(set) var cancelledImageURLs = [URL]()
+        
+        func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
             imageRequests.append((url, completion))
             return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
         }
@@ -52,8 +54,9 @@ extension FeedUIIntegrationTests {
         }
         
         func completeImageLoadingWithError(at index: Int = 0) {
-            let error = NSError(domain: "test", code: 0)
+            let error = NSError(domain: "an error", code: 0)
             imageRequests[index].completion(.failure(error))
         }
     }
+    
 }

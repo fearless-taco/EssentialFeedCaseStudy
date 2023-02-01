@@ -7,16 +7,20 @@ func uniqueFeedImage() -> FeedImage {
 
 func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
     let images = [uniqueFeedImage(), uniqueFeedImage()]
-    let localFeedImages = images.map {
+    let local = images.map {
         LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url)
     }
 
-    return (images, localFeedImages)
+    return (images, local)
 }
 
 extension Date {
     func minusCacheMaxAge() -> Date {
         adding(days: -7)
+    }
+    
+    private var feedCacheMaxAgeInDays: Int {
+        return 7
     }
 
     private func adding(days: Int) -> Date {
