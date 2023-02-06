@@ -142,7 +142,7 @@
                                         <constraint firstItem="KHi-B9-WUE" firstAttribute="top" secondItem="rTP-0U-Q3P" secondAttribute="topMargin" priority="999" constant="6" id="gYk-06-5bJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" identifier="feed-image-cell">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <userDefinedRuntimeAttributes>
