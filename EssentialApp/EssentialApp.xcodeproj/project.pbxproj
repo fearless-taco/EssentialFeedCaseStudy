@@ -33,6 +33,7 @@
 		1583F4AC298846C900968AFE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1583F4AB298846C900968AFE /* XCTestCase+MemoryLeakTracking.swift */; };
 		1583F4AE2988474400968AFE /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1583F4AD2988474400968AFE /* SharedTestHelpers.swift */; };
 		1583F4B02989914E00968AFE /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1583F4AF2989914E00968AFE /* FeedLoaderCacheDecoratorTests.swift */; };
+		15E028222992E2AC00F10A3E /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E028202992E27200F10A3E /* DebuggingSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		1583F4AB298846C900968AFE /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		1583F4AD2988474400968AFE /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		1583F4AF2989914E00968AFE /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
+		15E028202992E27200F10A3E /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				1583F4A82988462200968AFE /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				1577B1632989A13F009D082B /* FeedLoaderCacheDecorator.swift */,
 				1577B16F2989B305009D082B /* FeedImageDataLoaderCacheDecorator.swift */,
+				15E028202992E27200F10A3E /* DebuggingSceneDelegate.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				1535B45E2986DCDF00F40EFE /* AppDelegate.swift in Sources */,
 				1583F4A52986F95800968AFE /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				1577B1642989A13F009D082B /* FeedLoaderCacheDecorator.swift in Sources */,
+				15E028222992E2AC00F10A3E /* DebuggingSceneDelegate.swift in Sources */,
 				1535B4602986DCDF00F40EFE /* SceneDelegate.swift in Sources */,
 				1583F4A92988462200968AFE /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				1577B1702989B305009D082B /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
