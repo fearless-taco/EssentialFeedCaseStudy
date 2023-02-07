@@ -68,6 +68,9 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="gKt-D3-wy6"/>
                                                                     </constraints>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="feed-image-view">
+                                                                        <bool key="isElement" value="YES"/>
+                                                                    </accessibility>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,9 +148,6 @@
                                 <accessibility key="accessibilityConfiguration" identifier="feed-image-cell">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="feed-image-cell" localized="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="uuP-2T-iOr" id="R4Z-uz-8bA"/>
                                     <outlet property="feedImageContainer" destination="eJW-8D-Ruz" id="5gA-2j-y8s"/>
